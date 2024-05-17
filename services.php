@@ -3,8 +3,6 @@ session_start();
 error_reporting(0);
 include('includes/dbconnection.php');
 
-
-
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +33,34 @@ include('includes/dbconnection.php');
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-	 
+	  <?php include_once('includes/header.php');?>
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg-2.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+          <div class="col-md-9 ftco-animate pb-5">
+            <h2 class="mb-0 bread">Servicios</h2>
+            <p class="breadcrumbs"><span class="mr-2"><a href="index.php">Inicio <i class="ion-ios-arrow-forward"></i></a></span> <span>Servicios <i class="ion-ios-arrow-forward"></i></span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+       
+
+    <section class="ftco-section ftco-pricing">
+			<div class="container">
+				<div class="row justify-content-center pb-3">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big">Precios</h1>
+          	<span class="subheading">Precios</span>
+            <h2 class="mb-4">Precio de Nuestros Servicios</h2>
+            <p>Tenemos un gran pull de servicios para tu deleite, sabemos que te encantará disfrutar de nuestros Servicios</p>
+          </div>
+        </div>
+            <table class="table table-bordered"> <thead> <tr> <th>#</th> <th>Servicios</th> <th>Precios</th> </tr> </thead> <tbody>
+<?php
 $ret=mysqli_query($con,"select *from  tblservices");
 $cnt=1;
 while ($row=mysqli_fetch_array($ret)) {
